@@ -293,13 +293,19 @@ tbody tr:hover {
   z-index: 3;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 #form-button {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-style: normal;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 48%;
   padding: 8px;
   border: 0;
   position: relative;
@@ -307,15 +313,11 @@ tbody tr:hover {
   border-radius: 10rem;
   transition: all 0.02s;
   cursor: pointer;
-  color: rgb(37, 37, 37);
+  color: rgb(33, 0, 85);
   z-index: 0;
+  background: #255F4E;
   box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
   transition: .5s;
-}
-
-#form-button:hover {
-  background: #255F4E;
-  color: rgb(33, 0, 85);
 }
 
 #save-button {
@@ -325,7 +327,7 @@ tbody tr:hover {
   font-style: normal;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 48%;
   padding: 8px;
   border: 0;
   position: relative;
@@ -333,13 +335,34 @@ tbody tr:hover {
   border-radius: 10rem;
   transition: all 0.02s;
   cursor: pointer;
-  color: rgb(37, 37, 37);
+  color: rgb(33, 0, 85);
   z-index: 0;
+  background: #255F4E;
   box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
   transition: .5s;
 }
 
-#save-button:hover {
-  background: #255F4E;
+#cancel-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  width: 48%;
+  padding: 8px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  cursor: pointer;
   color: rgb(33, 0, 85);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+  transition: .5s;
+  background: #ff0f43;
+}
+
+#form-button:active, #save-button:active, #cancel-button:active {
+  transform: scale(0.97);
 }

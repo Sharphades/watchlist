@@ -2,6 +2,7 @@ const mainTable = document.querySelector('.table-body');
 const addButton = document.querySelector('#add-button');
 const formButton = document.querySelector('#form-button');
 const saveForm = document.querySelector('#save-button');
+const cancelForm = document.querySelector('#cancel-button');
 
 const editButton = document.getElementById('edit-button');
 const deleteButton = document.getElementById('delete-button');
@@ -33,7 +34,7 @@ function addRow() {
         makeRow(rowData); // {{kini nga line kay makayabag 1day sad naghunahuna ug unsaon pag fix}}
         clearInputs();
     } else {
-        alert('Please fill out all fields.');
+        alert('Fill upi na aysig tinapolan!');
     }
     clearInputs();
 }
@@ -99,6 +100,7 @@ function saveRow() {
 
     const rows = getLocalStoredRows();
     rows[tableRow.rowIndex-1].title = document.getElementById('anime-title').value;
+    rows[tableRow.rowIndex-1].season = document.getElementById('anime-season').value;
     rows[tableRow.rowIndex-1].episode = document.getElementById('anime-episode').value
     rows[tableRow.rowIndex-1].date = document.getElementById('anime-date').value
     saveRows(rows);
@@ -139,4 +141,8 @@ addButton.addEventListener('click', function() {
     form.style.display = 'inline-block';
     form.style.animation = 'toDown 0.5s ease-out';
 
+});
+
+cancelForm.addEventListener('click', function(){
+    hideDialog();
 });

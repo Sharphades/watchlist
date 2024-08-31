@@ -2,11 +2,11 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(191, 70, 255, 1) 30%,
-      rgba(0, 212, 255, 1) 100%
-    );
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #ffffff;
 }
 
 .table-container {
@@ -20,7 +20,7 @@ html, body {
 }
 
 .header {
-    background:rgba(191, 70, 255, 1);
+    background: #255F4E;
     display: flex;
     align-items: center;
     margin-right: auto;
@@ -70,11 +70,11 @@ html, body {
   }
   
   .hoverEffect div {
-    background: rgb(222, 0, 75);
+    background: #6B7560;
     background: linear-gradient(
       90deg,
-      rgba(191, 70, 255, 1) 49%,
-      rgba(0, 212, 255, 1) 100%
+      #1E3D17 49%,
+      #255F4E 100%
     );
     border-radius: 40rem;
     width: 10rem;
@@ -120,8 +120,9 @@ thead {
     top: 0;
     height: 50px;
     z-index: 2;
-    box-shadow: 0 2px 2px 0 rgb(70, 66, 66);
-    background-color: rgba(191, 70, 255, 1);
+    box-shadow: 0 1px 1px 0 #272727;
+    background: #255F4E;
+    /* background-color: rgba(191, 70, 255, 1); */
 }
 
 thead th {
@@ -147,12 +148,13 @@ tbody tr {
     height: 40px;
     padding: 0;
     transition: .5s;
-    position:relative;
+    color: #ffffff;
+
 }
 
 tbody tr:hover {
     transition: .5s;
-    background-color: rgba(137, 43, 226, 0.5);
+    background-color: rgba(82, 129, 120, 0.534);
 }
 
 /* button action styling */

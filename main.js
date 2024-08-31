@@ -1,12 +1,14 @@
 const mainTable = document.querySelector('.table-body');
-const addButton = document.querySelector('.add-button');
+const addButton = document.querySelector('#add-button');
 const saveButton = document.querySelector('.save-button');
 const editButton = document.getElementById('edit-button');
 const deleteButton = document.getElementById('delete-button');
 let tableRow = null;
 let numbers = 0;
 
-document.addEventListener('DOMContentLoaded', loadTable);
+document.addEventListener('DOMContentLoaded', function() {
+    loadTable();
+});
 
 function loadTable() {
     const rows = getLocalStoredRows();
@@ -15,11 +17,12 @@ function loadTable() {
 
 //mag add ug anime sa list or table
 function addRow() {
-    const title = document.getElementById('anime-title').value;
-    const episode = document.getElementById('anime-episode').value;
-    const date = document.getElementById('anime-date').value;
+    const title = "asdasdasdas";
+    const episode = 1;
+    const season =  "a2312312";
+    const date = "08-20-2004";
 
-    if (title && episode && date) {
+    if (title && episode && season && date) {
         const rowData = { title, episode, date };
         const rows = getLocalStoredRows();
         rows.push(rowData);
@@ -50,10 +53,13 @@ function deleteRow(element) {
 
 function makeRow(item) {
     const createdRow = mainTable.insertRow();
+
     createdRow.insertCell(0).innerText = item.title;
-    createdRow.insertCell(1).innerText = item.episode;
-    createdRow.insertCell(2).innerText = item.date;
-    const actionsCell = createdRow.insertCell(3);
+    createdRow.insertCell(1).innerText = item.season;
+    createdRow.insertCell(2).innerText = item.episode;
+    createdRow.insertCell(3).innerText = item.date;
+    
+    const actionsCell = createdRow.insertCell(4);
     actionsCell.innerHTML = `<button id="delete-button" onclick="deleteRow(this)"><i class="fa-duotone fa-solid fa-trash"></i></button>
                              <button id="edit-button" onclick="editRow(this)"><i class="fa-duotone fa-solid fa-pen-to-square"></i></button>`;
 }
@@ -100,6 +106,39 @@ function clearInputs() {
     document.getElementById('anime-date').value = '';
 }
 
-saveButton.addEventListener('click', saveRow);
+// saveButton.addEventListener('click', saveRow);
 
 addButton.addEventListener('click', addRow);
+
+// para sa notification
+function checkDateAndNotify() {
+    const targetDate = new Date('2024-08-31');
+    
+    const currentDate = new Date();
+
+    if (
+        currentDate.getFullYear() === targetDate.getFullYear() &&
+        currentDate.getMonth() === targetDate.getMonth() &&
+        currentDate.getDate() === targetDate.getDate()
+    ) {
+        if (Notification.permission === "granted") {
+            showNotification();
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(permission => {
+                if (permission === "granted") {
+                    showNotification();
+                }
+            });
+        }
+    }
+}
+
+function showNotification() {
+    const notificationOptions = {
+        body: "I love you so much",
+        icon: "/images/icon.webp"
+    };
+    new Notification("Reminder", notificationOptions);
+}
+
+checkDateAndNotify();

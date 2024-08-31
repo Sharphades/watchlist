@@ -2,6 +2,11 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(191, 70, 255, 1) 30%,
+      rgba(0, 212, 255, 1) 100%
+    );
 }
 
 .table-container {
@@ -14,6 +19,98 @@ html, body {
     display: none;
 }
 
+.header {
+    background:rgba(191, 70, 255, 1);
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 0 10px 0 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* From Uiverse.io by Wendell47 */ 
+#add-button {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding:8px 25px;
+    border: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    cursor: pointer;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+  }
+  
+  #add-button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+  }
+  
+  #add-button:active {
+    transform: scale(0.97);
+  }
+  
+  .hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .hoverEffect div {
+    background: rgb(222, 0, 75);
+    background: linear-gradient(
+      90deg,
+      rgba(191, 70, 255, 1) 49%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+  }
+  
+  #add-button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+  }
+  
+  @keyframes effect {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+h3 {
+    flex-grow: 1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin: 10px;
+}
 
 table {
     width: 100%;
@@ -23,10 +120,15 @@ table {
 
 thead {
     position: sticky;
-    top: 0;
-    background-color: #6765bd;
-    height: 60px;
+    top: 49px;
+    height: 50px;
     z-index: 2;
+    box-shadow: 0 2px 2px 0 rgb(70, 66, 66);
+    background-color: rgba(191, 70, 255, 1);
+}
+
+thead th:first-child {
+    min-width: 200px;
 }
 
 h2, th {
@@ -45,7 +147,6 @@ tbody td {
 
 tbody tr {
     animation: slideUp .5s ease-in-out;
-    background-color: #fcfcfc;
     height: 40px;
     padding: 0;
     transition: .5s;
@@ -54,17 +155,17 @@ tbody tr {
 
 tbody tr:hover {
     transition: .5s;
-    background: rgb(245, 245, 245);
+    background-color: rgba(137, 43, 226, 0.5);
 }
 
 /* button action styling */
 
 #delete-button {
   width: 25px;
-  color: red;
+  color: black;
   height: 20px;
   border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 44, 44);
   border: black solid 1px;
   cursor: pointer;
   transition-duration: 0.3s;
@@ -86,7 +187,7 @@ tbody tr:hover {
     color: black;
     height: 20px;
     border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 137, 250);
     border: black solid 1px;
     cursor: pointer;
     transition-duration: 0.3s;
@@ -121,8 +222,4 @@ tbody tr:hover {
     }
 }
 
-/* for phone */
-/* @media only screen and (max-width: 600px) {
-    tbody td {
-    }
-} */
+/* para sa editor ug para editan */

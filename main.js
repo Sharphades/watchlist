@@ -17,13 +17,13 @@ function loadTable() {
 
 //mag add ug anime sa list or table
 function addRow() {
-    const title = "asdasdasdas";
+    const title = "That time i got reincarnated as a slime";
     const episode = 1;
-    const season =  "a2312312";
+    const season =  1;
     const date = "08-20-2004";
 
     if (title && episode && season && date) {
-        const rowData = { title, episode, date };
+        const rowData = { title, season,episode, date };
         const rows = getLocalStoredRows();
         rows.push(rowData);
 

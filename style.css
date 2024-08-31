@@ -124,6 +124,10 @@ thead {
     background-color: rgba(191, 70, 255, 1);
 }
 
+thead th {
+    padding: 10px;
+}
+
 h2, th {
     text-align: center;
     font-family: "Poppins", sans-serif;

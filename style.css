@@ -6,7 +6,6 @@ html, body {
 
 .table-container {
     height: 100%;
-    box-shadow: #2423238e 0px 0px 5px 0.5px;
     overflow: auto;
 }
 
@@ -41,15 +40,6 @@ tbody td {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
-    padding: 5px;
-}
-
-thead th:first-child{
-    min-width: 50px;
-}
-
-.headTitle {
-    min-width: 200px;
 }
 
 tbody tr {
@@ -130,8 +120,8 @@ tbody tr:hover {
     }
 }
 
-@media only screen and (max-width: 600px) {
+/* for phone */
+/* @media only screen and (max-width: 600px) {
     tbody td {
-        font-size: 10.6px;
     }
-}
+} */

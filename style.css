@@ -5,8 +5,7 @@ body {
 }
 
 .table-container {
-    min-height: 100vh;
-    top: 0;
+    height: 100vh;
     box-shadow: #2423238e 0px 0px 5px 0.5px;
     overflow: auto;
 }

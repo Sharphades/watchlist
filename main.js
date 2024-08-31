@@ -108,7 +108,7 @@ function clearInputs() {
 
 // saveButton.addEventListener('click', saveRow);
 
-addButton.addEventListener('click', addRow);
+addButton.addEventListener('click', showNotification);
 
 // para sa notification
 function checkDateAndNotify() {

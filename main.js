@@ -50,11 +50,10 @@ function deleteRow(element) {
 
 function makeRow(item) {
     const createdRow = mainTable.insertRow();
-    createdRow.insertCell(0).innerText = mainTable.rows.length;
-    createdRow.insertCell(1).innerText = item.title;
-    createdRow.insertCell(2).innerText = item.episode;
-    createdRow.insertCell(3).innerText = item.date;
-    const actionsCell = createdRow.insertCell(4);
+    createdRow.insertCell(0).innerText = item.title;
+    createdRow.insertCell(1).innerText = item.episode;
+    createdRow.insertCell(2).innerText = item.date;
+    const actionsCell = createdRow.insertCell(3);
     actionsCell.innerHTML = `<button id="delete-button" onclick="deleteRow(this)"><i class="fa-duotone fa-solid fa-trash"></i></button>
                              <button id="edit-button" onclick="editRow(this)"><i class="fa-duotone fa-solid fa-pen-to-square"></i></button>`;
 }

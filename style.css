@@ -18,6 +18,7 @@ html, body {
 table {
     width: 100%;
     border-collapse: collapse;
+    font-size: 15px;
 }
 
 thead {
@@ -59,7 +60,7 @@ tbody tr:hover {
 /* button action styling */
 
 #delete-button {
-  width: 29px;
+  width: 25px;
   color: red;
   height: 20px;
   border-radius: 5px;
@@ -81,7 +82,7 @@ tbody tr:hover {
 
 
 #edit-button {
-    width: 29px;
+    width: 25px;
     color: black;
     height: 20px;
     border-radius: 5px;

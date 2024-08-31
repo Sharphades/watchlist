@@ -26,9 +26,6 @@ html, body {
     margin-right: auto;
     box-sizing: border-box;
     padding: 0 10px 0 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
 }
 
 /* From Uiverse.io by Wendell47 */ 
@@ -120,7 +117,7 @@ table {
 
 thead {
     position: sticky;
-    top: 49px;
+    top: 0;
     height: 50px;
     z-index: 2;
     box-shadow: 0 2px 2px 0 rgb(70, 66, 66);

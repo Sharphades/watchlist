@@ -1,6 +1,8 @@
 const mainTable = document.querySelector('.table-body');
 const addButton = document.querySelector('#add-button');
-const saveButton = document.querySelector('.save-button');
+const formButton = document.querySelector('#form-button');
+const saveForm = document.querySelector('#save-button');
+
 const editButton = document.getElementById('edit-button');
 const deleteButton = document.getElementById('delete-button');
 let tableRow = null;
@@ -17,10 +19,10 @@ function loadTable() {
 
 //mag add ug anime sa list or table
 function addRow() {
-    const title = "That time i got reincarnated as a slime";
-    const episode = 1;
-    const season =  1;
-    const date = "08-20-2004";
+    const title = document.getElementById('anime-title').value;
+    const season = document.getElementById('anime-season').value;
+    const episode =  document.getElementById('anime-episode').value;
+    const date = document.getElementById('anime-date').value;
 
     if (title && episode && season && date) {
         const rowData = { title, season,episode, date };
@@ -74,22 +76,26 @@ function getLocalStoredRows() {
 
 function editRow(view) {
     tableRow = view.parentElement.parentElement
-    document.getElementById('anime-title').value = tableRow.cells[1].innerText;
+    document.getElementById('anime-title').value = tableRow.cells[0].innerText;
+    document.getElementById('anime-season').value = tableRow.cells[1].innerText;
     document.getElementById('anime-episode').value = tableRow.cells[2].innerText;
     document.getElementById('anime-date').value = tableRow.cells[3].innerText;
 
-    document.querySelector('.save-button').style.display = 'inline-block';
-    document.querySelector('.add-button').style.display = 'none';
+    document.querySelector('.form-bg').style.display = 'inline-block';
+    document.querySelector('.form').style.display = 'inline-block';
+    formButton.style.display = 'none';
+    saveForm.style.display = 'inline-block';
     
 }
 
 function saveRow() {
-    tableRow.cells[1].innerText = document.getElementById('anime-title').value;
+    tableRow.cells[0].innerText = document.getElementById('anime-title').value;
+    tableRow.cells[1].innerText = document.getElementById('anime-season').value;
     tableRow.cells[2].innerText = document.getElementById('anime-episode').value;
     tableRow.cells[3].innerText = document.getElementById('anime-date').value;
 
-    document.querySelector('.save-button').style.display = 'none';
-    document.querySelector('.add-button').style.display = 'inline-block';
+    document.querySelector('#save-button').style.display = 'none';
+    document.querySelector('#form-button').style.display = 'inline-block';
 
     const rows = getLocalStoredRows();
     rows[tableRow.rowIndex-1].title = document.getElementById('anime-title').value;
@@ -104,8 +110,33 @@ function clearInputs() {
     document.getElementById('anime-title').value = '';
     document.getElementById('anime-episode').value = '';
     document.getElementById('anime-date').value = '';
+    document.getElementById('anime-season').value = '';
 }
 
-//saveButton.addEventListener('click', saveRow);
+function hideDialog() {
+    const formBackground = document.querySelector('.form-bg');
+    const form = document.querySelector('.form');
 
-addButton.addEventListener('click', addRow);
+    formBackground.style.display = 'none';
+    form.style.display = 'none';
+}
+
+saveForm.addEventListener('click', function(){
+    hideDialog();
+    saveRow();
+});
+
+formButton.addEventListener('click', function() {
+    hideDialog();
+    addRow();
+});
+
+addButton.addEventListener('click', function() {
+    const formBackground = document.querySelector('.form-bg');
+    const form = document.querySelector('.form');
+
+    formBackground.style.display = 'inline-block';
+    form.style.display = 'inline-block';
+    form.style.animation = 'toDown 0.5s ease-out';
+
+});

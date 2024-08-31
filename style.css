@@ -161,8 +161,8 @@ tbody tr:hover {
   color: black;
   height: 20px;
   border-radius: 5px;
-  background-color: rgb(255, 44, 44);
-  border: black solid 1px;
+  background-color: rgb(255, 25, 121);
+  border: 1px solid black;
   cursor: pointer;
   transition-duration: 0.3s;
   position: relative;
@@ -174,7 +174,7 @@ tbody tr:hover {
 }
 
 #delete-button:active, #edit-button:active {
-    transform: rotate(160deg);
+    transform: rotate(20deg);
 }
 
 
@@ -204,7 +204,7 @@ tbody tr:hover {
     }
 }
 
-/* animatino inag delete sa cells */
+/* animation inag delete sa cells */
 
 .slide-out {
     animation: slideDown 0.5s ease-out forwards;

@@ -106,39 +106,6 @@ function clearInputs() {
     document.getElementById('anime-date').value = '';
 }
 
-// saveButton.addEventListener('click', saveRow);
+//saveButton.addEventListener('click', saveRow);
 
-addButton.addEventListener('click', showNotification);
-
-// para sa notification
-function checkDateAndNotify() {
-    const targetDate = new Date('2024-08-31');
-    
-    const currentDate = new Date();
-
-    if (
-        currentDate.getFullYear() === targetDate.getFullYear() &&
-        currentDate.getMonth() === targetDate.getMonth() &&
-        currentDate.getDate() === targetDate.getDate()
-    ) {
-        if (Notification.permission === "granted") {
-            showNotification();
-        } else if (Notification.permission !== "denied") {
-            Notification.requestPermission().then(permission => {
-                if (permission === "granted") {
-                    showNotification();
-                }
-            });
-        }
-    }
-}
-
-function showNotification() {
-    const notificationOptions = {
-        body: "I love you so much",
-        icon: "/images/icon.webp"
-    };
-    new Notification("Reminder", notificationOptions);
-}
-
-checkDateAndNotify();
+addButton.addEventListener('click', addRow);

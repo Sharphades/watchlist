@@ -1,1 +1,1 @@
-![alt text](https://github.com/[Sharphades]/[watchlist]/blob/[main]/[images]/bg.jpg?raw=true)
+![alt text](https://raw.githubusercontent.com/Sharphades/watchlist/main/images/bg.jpg)

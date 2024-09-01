@@ -3,6 +3,7 @@ const addButton = document.querySelector('#add-button');
 const formButton = document.querySelector('#form-button');
 const saveForm = document.querySelector('#save-button');
 const cancelForm = document.querySelector('#cancel-button');
+const dateSort = document.getElementById('date-sort');
 
 const editButton = document.getElementById('edit-button');
 const deleteButton = document.getElementById('delete-button');
@@ -122,6 +123,22 @@ function hideDialog() {
     formBackground.style.display = 'none';
     form.style.display = 'none';
 }
+
+function sortRow() {
+    const rows = Array.from(getLocalStoredRows());
+
+    rows.sort((earlierDate, nextDate) => {
+        const dateA = new Date(earlierDate.date);
+        const dateB = new Date(nextDate.date); 
+        
+        return dateA - dateB;
+    });
+    saveRows(rows);
+    location.reload();
+
+}
+
+dateSort.addEventListener('click', sortRow);
 
 saveForm.addEventListener('click', function(){
     hideDialog();

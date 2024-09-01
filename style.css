@@ -28,6 +28,11 @@ html, body {
     color: #ffffff;
 }
 
+#date-sort {
+  cursor: pointer;
+  content: "222";
+}
+
 /* From Uiverse.io by Wendell47 */ 
 #add-button {
     font-family: "Poppins", sans-serif;
